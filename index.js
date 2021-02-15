@@ -9,7 +9,7 @@ import useTodoState from './useTodoState';
 
 
 const App = () => {
-  const [ todos, addTodo, deleteTodo ] = useTodoState([]);
+  const { todos, addTodo, deleteTodo } = useTodoState([]);
 
   return (
     <div className="App">
@@ -18,7 +18,7 @@ const App = () => {
       </Typography>
 
       <TodoForm 
-        saveTodo={(todoText) => {
+        saveTodo={todoText => {
           const trimmedText = todoText.trim();
 
           if (trimmedText.length > 0) {
